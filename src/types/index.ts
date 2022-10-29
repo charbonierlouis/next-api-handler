@@ -6,16 +6,17 @@ export interface ServiceConfig {
 }
 
 type ControllerMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';
-type CotrollerType = 'ENTITY' | 'LIST';
+
+export type CotrollerType = 'ENTITY' | 'LIST';
 
 interface ControllerAction {
   method: ControllerMethod;
-  type: CotrollerType;
 }
 
 export interface ControllerConfig<E> {
   actions: ControllerAction[];
   service: Service<E>;
+  type: CotrollerType;
   cache?: boolean;
   key?: string;
 }
