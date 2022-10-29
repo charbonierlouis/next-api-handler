@@ -1,4 +1,4 @@
-import { Service } from "../services";
+import { Service } from '../services';
 
 export interface ServiceConfig {
   path: string;

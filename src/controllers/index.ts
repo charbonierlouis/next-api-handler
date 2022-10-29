@@ -46,7 +46,7 @@ export class Controller<E> {
       case 'DELETE': {
         return this.handler.generateResponse(
           await this.config.service.delete(this.request.query[keyParamsIndex] as string),
-        )
+        );
       }
       default: {
         return this.handler.generateNotFoundResponse();
