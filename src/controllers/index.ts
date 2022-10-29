@@ -25,9 +25,9 @@ export class Controller<E> {
     }
     switch (method) {
       case 'GET': {
-        if (item.type === 'LIST') {
+        if (this.config.type === 'LIST') {
           return this.handler.generateResponse(await this.config.service.findAll());
-        } else if (item.type === 'ENTITY' && keyParamsIndex !== -1) {
+        } else if (this.config.type === 'ENTITY' && keyParamsIndex !== -1) {
           return this.handler.generateResponse(
             await this.config.service.findOne(this.request.query[keyParamsIndex] as string),
           );
