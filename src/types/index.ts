@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import { Normalizer } from '../normalizers';
 import { Service } from '../services';
 
 export interface ServiceConfig {
@@ -27,4 +28,5 @@ export interface ControllerConfig<E> {
   type: CotrollerType;
   cache?: boolean;
   key?: string;
+  normalizer?: Normalizer<unknown, E>;
 }
