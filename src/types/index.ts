@@ -5,11 +5,11 @@ export interface ServiceConfig {
   baseUrl: string;
 }
 
-type ControllerMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';
+export type ControllerMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';
 
 export type CotrollerType = 'ENTITY' | 'LIST';
 
-interface ControllerAction {
+export interface ControllerAction {
   method: ControllerMethod;
 }
 
