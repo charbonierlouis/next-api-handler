@@ -1,3 +1,4 @@
+import { NextApiRequest, NextApiResponse } from 'next';
 import { Service } from '../services';
 
 export interface ServiceConfig {
@@ -11,6 +12,13 @@ export type CotrollerType = 'ENTITY' | 'LIST';
 
 export interface ControllerAction {
   method: ControllerMethod;
+}
+
+export interface ControllerProps {
+  request: NextApiRequest;
+  response: NextApiResponse;
+  type: CotrollerType;
+  actions: ControllerAction[];
 }
 
 export interface ControllerConfig<E> {
